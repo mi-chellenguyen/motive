@@ -3,11 +3,48 @@
 <!-- Extension page -->
 
 <head>
-<title>New Tab</title>
+	<title>New Tab</title>
 </head>
-
+	
 <body>
-<h1>Welcome</h1>
-<p>This is your page</p>
-</body>
+	<h1>Welcome</h1>
+    <p id="date"></p>
+    <p id="time"></p>
+	
+	<script>
+		var newDate = new Date();
+    	var year = newDate.getFullYear();
+    	var month = newDate.getMonth();
+    	var day = newDate.getDate();
+	 
+		var hours = (newDate.getHours() + 11) % 12 + 1;
+    	var minutes = newDate.getMinutes();
+	  
+    	var monthNames = ["January", "February", "March", "April", "May", "June",
+					      "July", "August", "September", "October", "November", "December"
+                         ];
+    	document.getElementById("date").innerHTML = monthNames[month] + " " + day + ", " + year;
+		document.getElementById("time").innerHTML = hours + ":" + minutes;
+  </script>
+</body>	
+	
+<style>
+	h1 {
+    	color: white;
+        text-align: center;
+ 		font-family: verdana;
+        font-size: 50px;
+    }
+    
+	body {
+    	background-color: lightblue;
+    }
+    
+    p {
+    	color: white;
+        text-align: center;
+        font-family: verdana;
+        font-size: 30px;
+    }
+</style>
 </html>
