@@ -6,12 +6,15 @@
   "version": "1.0",
   
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["dashboard.js"]
   },
 
   "browser_action": {
     "default_icon": "icon.png"
   },
+"chrome_url_overrides": {
+    "newtab": "dashboard.html"
+},
   "permissions": [
 	"tabs"
   ]
